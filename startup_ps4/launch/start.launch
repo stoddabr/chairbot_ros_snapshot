@@ -1,0 +1,12 @@
+<!-- 
+ -->
+<launch>
+
+<node respawn="true" pkg="joy" type="joy_node" name="ps4_joy">
+<param name="dev" type="string" value="/dev/input/js0" />
+</node>
+ 
+<node pkg="startup_ps4" type="startup.py" name="startup" output="screen">
+<param name="port" value="/dev/ttyACM0" />
+</node>
+</launch>
